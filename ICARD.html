@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card</title>
+    <style>
+        .container { 
+            position: relative; 
+            height: 500px; 
+            width: 270px; 
+            background-size: cover; 
+            align-content: auto; 
+            box-shadow: 10px 10px 20px; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            z-index: 1; 
+        } 
+        fieldset {
+            width: 300px; 
+            margin: 0 auto; 
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            position: relative; 
+        }
+        .vertical-text {
+            position: absolute;
+            top: 20%;
+            left: 10px; 
+            transform: rotate(90deg);
+            transform-origin: left top;
+            white-space: nowrap;
+            font-size: 50px;
+            font-weight: bold;
+            background-color: blue;
+            color: white;
+            width: 596px;
+            margin-top: -120px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+</head>
+<body style="text-align: center;">
+    <fieldset>
+        <div class="vertical-text">ENGINEERING</div>
+        <form>
+            <img src="D:\Sarthak\exp-13\zeal college logo 2.jpeg" alt="" height="100" width="250"><br>
+            <p><b>Zeal college of engineering and research, Pune</b></p>
+            <address>
+                S. No. 39,
+                Dhayari-Narhe Road,
+                Narhe,
+                Pune - 411041,
+                Ph: 020-6726000
+            </address>
+            <label for="photo"><img src="D:\Sarthak\exp-13\9bd66f4a-c876-4533-854a-e9a1bf735018.jpg" alt="Image" height="100" width="100"></label><br>
+            <label for="name"><b>Sarthak Balasaheb Salve</b></label><br>
+            <label for="zprn"><b>ZPRN:</b>124BT11309</label><br>
+            <label for="dept"><b>Department:</b>BTech Artificial Intelligence and Data Science</label><br>
+            <label for="doa"><b>Admission Date:</b>08-09-2024</label>
+            <svg id="barcode"></svg>
+            <script>
+                JsBarcode("#barcode", "124BT113095", {
+                    format: "CODE128", 
+                    lineColor: "#000000",
+                    width: 2,
+                    height: 20,
+                    displayValue: true
+                });
+            </script>
+            <label for="sign">
+                <table>
+                    <tr>
+                        <td style="padding-right: 150px;">
+                            <img src="D:\Sarthak\exp-13\virat sign.png" alt="Librarian" height="25" width="75">
+                            <p><b>Librarian</b></p>
+                        </td>
+                        <td>
+                            <img src="D:\Sarthak\exp-13\virat sign.png" alt="Principal" height="25" width="75">
+                            <p><b>Principal</b></p>
+                        </td>
+                    </tr>
+                </table>
+            </label>
+        </form>
+    </fieldset>
+</body>
+</html>
